@@ -1,13 +1,13 @@
 $(document).ready(function(){
 
 //geoFindMe();
-checkMyLocation();
+//checkMyLocation();
 
-var longitude = 38.8977;
-var latitude = 77.0366;
+var longitude = 38897;
+var latitude = 77036;
 // var myLocation = [longitude, latitude];
 var outOfRange = false;
-var whiteHouse = false; 
+var whiteHouse = true; 
 var whiteHouseLocationX = 38897;
 var whiteHouseLocationY = 77036;
 var lincolnMemorial = false;
@@ -58,9 +58,7 @@ function geoFindMe() {
 
 function checkMyLocation(){
 
-	
-
-	trunkate(longitude, latitude); // is this correct
+	//trunkate(longitude, latitude); // is this correct
 
 	if (longitude == whiteHouseLocationX && latitude == whiteHouseLocationY){
 		whiteHouse = true;
@@ -183,6 +181,27 @@ function setQuestions(){
 }
 
 });
+
+	$('#questionOne').click(function() {
+	
+	});
+
+	$('#questionTwo').click(function() {
+	
+	});
+
+	$('#questionThree').click(function() {
+	
+	});
+
+	$('#questionFour').click(function() {
+	
+	});
+
+	$('#questionFive').click(function() {
+	
+	});
+
 
 //NEXT CHANGE THE ANSWER DIV DEPENDING ON WHAT QUESTION THEY PICK 
 
