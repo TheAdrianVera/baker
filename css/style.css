@@ -178,6 +178,9 @@
 			display: block;
 			margin: 0;
 			padding: 0.25em 0 0.5em 0;
+			font-size: 1em;
+			text-align: center;
+		color: #7D7D7D;
 		}
 		
 	footer
@@ -981,18 +984,22 @@
 		color: #fff;
 		padding-bottom: 2em;
 	}
-		#third header
-		{
+		#thirdh
+		{ font-size: 1.25em;
+font-weight: 400;
+padding-top: 20px;
+color: #757575;
+padding-bottom: 5px;
 		}
 	
-		#goodAnswer h2 { 
+		.answer header h2 { 
 				font-size: 1.25em;
 				font-weight: 400;
 				padding-top: 20px;
 				color: #757575;
 				padding-bottom: 5px;
 			}
-		#goodAnswer p {
+		.answer header p {
 				font-size: 1em;
 				text-align: center;
 				color: #7D7D7D;	
