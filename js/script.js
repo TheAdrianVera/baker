@@ -182,28 +182,88 @@ function setQuestions(){
 
 });
 
-	$('#questionOne').click(function() {
-	
+$('#questionOne').click(function() {
+	var query_params = "&keyword= White House";
+	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
+
+	$(document).ready(function() {
+		$.ajax({
+			type: "GET",
+			url: endpoint,
+			data: query_params,
+			success: function(data) {
+			document.getElementById("goodAnswer").innerHTML=(data.result[1].answer);
+			}
+		});
 	});
+});
 
-	$('#questionTwo').click(function() {
-	
-	});
+$('#questionTwo').click(function() {
+	var query_params = "&keyword= White House";
+	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
-	$('#questionThree').click(function() {
-	
-	});
+	$(document).ready(function() {
+		$.ajax({
+			type: "GET",
+			url: endpoint,
+			data: query_params,
+			success: function(data) {
+			document.getElementById("goodAnswer").innerHTML=(data.result[2].answer);
+			}
+		});
+	});		
+});
 
-	$('#questionFour').click(function() {
-	
-	});
+$('#questionThree').click(function() {
+	var query_params = "&keyword= White House";
+	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
-	$('#questionFive').click(function() {
-	
-	});
+	$(document).ready(function() {
+		$.ajax({
+			type: "GET",
+			url: endpoint,
+			data: query_params,
+			success: function(data) {
+			document.getElementById("goodAnswer").innerHTML=(data.result[3].answer);
+			}
+		});
+	});		
+});
+
+$('#questionFour').click(function() {
+	var query_params = "&keyword= White House";
+	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
+
+	$(document).ready(function() {
+		$.ajax({
+			type: "GET",
+			url: endpoint,
+			data: query_params,
+			success: function(data) {
+			document.getElementById("goodAnswer").innerHTML=(data.result[4].answer);
+			}
+		});
+	});		
+});
+
+$('#questionFive').click(function() {
+	var query_params = "&keyword= White House";
+	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
+
+	$(document).ready(function() {
+		$.ajax({
+			type: "GET",
+			url: endpoint,
+			data: query_params,
+			success: function(data) {
+			document.getElementById("goodAnswer").innerHTML=(data.result[5].answer);
+			}
+		});
+	});		
+});
 
 
-//NEXT CHANGE THE ANSWER DIV DEPENDING ON WHAT QUESTION THEY PICK 
+
 
 
 
