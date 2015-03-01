@@ -1,17 +1,30 @@
-var latitude = 0; 
-var longitude = 0;
-var myLocation = [longitude, latitude];
+$(document).ready(function(){
+
+//geoFindMe();
+checkMyLocation();
+
+var longitude = 38.8977;
+var latitude = 77.0366;
+// var myLocation = [longitude, latitude];
 var outOfRange = false;
 var whiteHouse = false; 
-var whiteHouseLocation = [38897, 77036];
+var whiteHouseLocationX = 38897;
+var whiteHouseLocationY = 77036;
 var lincolnMemorial = false;
-var lincolnMemorialLocation = [38889, 77050];
+var lincolnMemorialLocationX = 38889;
+var lincolnMemorialLocationY= 77050;
 var washingtonMonument = false; 
-var washingtonMonumentLocation = [388889, 77035];
+var washingtonMonumentLocationX = 38889;
+var washingtonMonumentLocationY = 77035;
 
 // ------------- GetUsersLocation -------------
+$('#exploreButton').click(function() {
+	setQuestions();
+});
 
 function geoFindMe() {
+
+ 
  var output = document.getElementById("phrase");
 
  if (!navigator.geolocation){
@@ -20,8 +33,9 @@ function geoFindMe() {
  }
 
  function success(position) {
-   var latitude  = position.coords.latitude;
-   var longitude = position.coords.longitude;
+ 	
+   latitude  = position.coords.latitude;
+   longitude = position.coords.longitude;
 
    output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>'; // could remove this
 
@@ -44,15 +58,17 @@ function geoFindMe() {
 
 function checkMyLocation(){
 
-	trunkate(longitude, latitude) // is this correct
+	
 
-	if (myLocation[0] == whiteHouseLocation[0] && myLocation[1] == whiteHouseLocation[1]){
+	trunkate(longitude, latitude); // is this correct
+
+	if (longitude == whiteHouseLocationX && latitude == whiteHouseLocationY){
 		whiteHouse = true;
 	}
-	else if (myLocation[0] == lincolnMemorialLocation[0] && myLocation[1] == lincolnMemorialLocation[1]{
+	else if (longitude == lincolnMemorialLocationX && latitude == lincolnMemorialLocationY){
 		lincolnMemorial == true;
 	}
-	else if (myLocation[0] == washingtonMonumentLocation[0] && myLocation[1] == washingtonMonumentLocation[1]){
+	else if (longitude == washingtonMonumentLocationX && latitude == washingtonMonumentLocationY){
 		washingtonMonument = true;
 	}
 	else{
@@ -63,25 +79,32 @@ function checkMyLocation(){
 		// ------------- Used inorder to trunkate location that is double -------------
 
 function trunkate(numLog , numLat){                          //takes in myLocation an array with [longitdude, latitude]
-	numLog = myLocation[0];
-	numLat = myLocation[1];
+	//var numLog = longitude; //Math.abs
+	//var numLat = latitude; //Math.abs
 
-	while (numLog <= 10000){
-		numLog = numLog/(0.1);
+	console.log(longitude);
+	console.log(latitude);
+
+	while (longitude <= 10000){
+		console.log("hi");
+		longitude = longitude*(10);
 	}
 
-	while (numLat <= 10000){
-		numLat = numLat/0.1;
+	while (latitude <= 10000){
+		console.log("hi");
+		latitude = latitude*(10);
 	}
 
-	myLocation[0] = Math.floor(numLog);
-	myLocation[1] = Math.floor(numLat);
+	longitude = Math.floor(numLog);
+	latitude = Math.floor(numLat);
 }
 
 // ------------- setsDivs to top 5 questions -------------
 
 //give question divs the #IDs questionOne, questionTwo ... questionFive
 function setQuestions(){
+
+	alert("I set questions");
 
 	if (whiteHouse == true){
 
@@ -158,6 +181,10 @@ function setQuestions(){
 		document.getElementById("questionFive").innerHTML="";
 	}
 }
+
+});
+
+//NEXT CHANGE THE ANSWER DIV DEPENDING ON WHAT QUESTION THEY PICK 
 
 
 
