@@ -102,7 +102,7 @@ function trunkate(numLog , numLat){                          //takes in myLocati
 //give question divs the #IDs questionOne, questionTwo ... questionFive
 function setQuestions(){
 
-	alert("I set questions");
+	//alert("I set questions");
 
 	if (whiteHouse == true){
 
@@ -115,11 +115,11 @@ function setQuestions(){
 				url: endpoint,
 				data: query_params,
 				success: function(data) {
-				document.getElementById("questionOne").innerHTML=(data.result[1].title);  //the index of result gets you the question. 
-				document.getElementById("questionTwo").innerHTML=(data.result[2].title);
-				document.getElementById("questionThree").innerHTML=(data.result[3].title);
-				document.getElementById("questionFour").innerHTML=(data.result[4].title);
-				document.getElementById("questionFive").innerHTML=(data.result[5].title);
+				document.getElementById("questionOne").innerHTML=(data.result[1].title + " ?");  //the index of result gets you the question. 
+				document.getElementById("questionTwo").innerHTML=(data.result[2].title + " ?");
+				document.getElementById("questionThree").innerHTML=(data.result[3].title + " ?");
+				document.getElementById("questionFour").innerHTML=(data.result[4].title + " ?");
+				document.getElementById("questionFive").innerHTML=(data.result[5].title + " ?");
 					//answer for answer 
 					//title for Question
 				}
@@ -182,7 +182,8 @@ function setQuestions(){
 
 });
 
-$('#questionOne').click(function() {
+$('#questionOneChange').click(function() {
+
 	var query_params = "&keyword= White House";
 	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
@@ -192,13 +193,14 @@ $('#questionOne').click(function() {
 			url: endpoint,
 			data: query_params,
 			success: function(data) {
-			document.getElementById("goodAnswer").innerHTML=(data.result[1].answer);
+				document.getElementById("answer").innerHTML=(data.result[1].answer);
 			}
 		});
 	});
+
 });
 
-$('#questionTwo').click(function() {
+$('#questionTwoChange').click(function() {
 	var query_params = "&keyword= White House";
 	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
@@ -208,13 +210,14 @@ $('#questionTwo').click(function() {
 			url: endpoint,
 			data: query_params,
 			success: function(data) {
-			document.getElementById("goodAnswer").innerHTML=(data.result[2].answer);
+				document.getElementById("answer").innerHTML=(data.result[2].answer);
 			}
 		});
 	});		
 });
 
-$('#questionThree').click(function() {
+$('#questionThreeChange').click(function() {
+
 	var query_params = "&keyword= White House";
 	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
@@ -224,13 +227,14 @@ $('#questionThree').click(function() {
 			url: endpoint,
 			data: query_params,
 			success: function(data) {
-			document.getElementById("goodAnswer").innerHTML=(data.result[3].answer);
+				document.getElementById("answer").innerHTML=(data.result[3].answer);
 			}
 		});
-	});		
+	});	
+
 });
 
-$('#questionFour').click(function() {
+$('#questionFourChange').click(function() {
 	var query_params = "&keyword= White House";
 	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
@@ -240,13 +244,13 @@ $('#questionFour').click(function() {
 			url: endpoint,
 			data: query_params,
 			success: function(data) {
-			document.getElementById("goodAnswer").innerHTML=(data.result[4].answer);
+				document.getElementById("answer").innerHTML=(data.result[4].answer);
 			}
 		});
 	});		
 });
 
-$('#questionFive').click(function() {
+$('#questionFiveChange').click(function() {
 	var query_params = "&keyword= White House";
 	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
 
@@ -256,16 +260,8 @@ $('#questionFive').click(function() {
 			url: endpoint,
 			data: query_params,
 			success: function(data) {
-			document.getElementById("goodAnswer").innerHTML=(data.result[5].answer);
+				document.getElementById("answer").innerHTML=(data.result[5].answer);
 			}
 		});
 	});		
 });
-
-
-
-
-
-
-
-
