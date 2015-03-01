@@ -967,6 +967,20 @@
 		{
 			padding-top: 1.5em;
 		}
+		
+		#goodAnswer h2 { 
+				font-size: 1.25em;
+				font-weight: 400;
+				padding-top: 20px;
+				color: #757575;
+				padding-bottom: 5px;
+			}
+		#goodAnswer p {
+				font-size: 1em;
+				text-align: center;
+				color: #7D7D7D;	
+			}
+
 /*********************************************************************************/
 /* Main Sections                                                                 */
 /*********************************************************************************/
