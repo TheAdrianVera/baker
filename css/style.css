@@ -578,6 +578,7 @@
 				table.default td
 				{
 					padding: 0.5em 1em 0.5em 1em;
+					float: left;
 				}
 				
 				table.default th
@@ -1085,4 +1086,3 @@
 				{
 					box-shadow: inset 0 0 0 1px #d6d6d6;
 				}
-	
