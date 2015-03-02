@@ -182,7 +182,12 @@ function setQuestions(){
 
 });
 
+function doIt(){
+	if (whitehouse){
+
 $('#questionOneChange').click(function() {
+
+	console.log("Hello");
 
 	var query_params = "&keyword= White House";
 	var endpoint = 'http://gravity.answers.com/endpoint/searches/questions?key=0365082c633528c9023c21eda59c909804d635b3';
@@ -265,3 +270,6 @@ $('#questionFiveChange').click(function() {
 		});
 	});		
 });
+}
+
+}
